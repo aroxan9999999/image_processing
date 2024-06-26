@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Images for Project</title>
+</head>
+<body>
+    <h1>Images for Project</h1>
+    {% for image in images %}
+        <p>Image ID: {{ image.id }}</p>
+        <p>Original: <a href="{{ image.original.url }}">{{ image.original.url }}</a></p>
+        <p>Thumbnail: {% if image.thumbnail %}<a href="{{ image.thumbnail.url }}">{{ image.thumbnail.url }}</a>{% else %}Not available{% endif %}</p>
+        <p>Big Thumbnail: {% if image.big_thumb %}<a href="{{ image.big_thumb.url }}">{{ image.big_thumb.url }}</a>{% else %}Not available{% endif %}</p>
+        <p>Big 1920: {% if image.big_1920 %}<a href="{{ image.big_1920.url }}">{{ image.big_1920.url }}</a>{% else %}Not available{% endif %}</p>
+        <p>2500px: {% if image.d2500 %}<a href="{{ image.d2500.url }}">{{ image.d2500.url }}</a>{% else %}Not available{% endif %}</p>
+        <p>State: {{ image.state }}</p>
+    {% endfor %}
+</body>
+</html>
